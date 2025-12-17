@@ -1,0 +1,260 @@
+.create-note-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 8px;
+}
+
+.note-input-container {
+    flex-grow: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px #000000;
+    padding: 20px;
+    order: 1;
+}
+
+.note-input-bg-white {
+    background-color: #FFFFFF;
+}
+
+.note-input-bg-yellow {
+    background-color: #FBBC04;
+}
+
+.note-input-bg-green {
+    background-color: #CCFF90;
+}
+
+.note-input-bg-blue {
+    background-color: #AECBFA;
+}
+
+.note-input-bg-red {
+    background-color: #F28B82;
+}
+
+.note-title-input {
+    height: 80px;
+    background-color: transparent;
+    color: #4B5563;
+    font-size: 24px;
+    font-family: Jura;
+    font-weight: 800;
+    border: none;
+    outline: none;
+    padding: 12px;
+}
+
+.note-content-input {
+    height: 100%;
+    max-height: 400px;
+    background-color: transparent;
+    color: #4B5563;
+    font-size: 20px;
+    font-family: Jura;
+    border: none;
+    outline: none;
+    padding: 12px;
+    line-height: 32px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+}
+
+.note-content-input:empty::before {
+    content: attr(data-placeholder);
+    color: #4B5563;
+    pointer-events: none;
+}
+
+.note-footer {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #E5E7EB;
+    gap: 10px;
+    padding-top: 16px;
+}
+
+.note-stats {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: none;
+    padding: none;
+}
+
+.word-count,
+.character-count, 
+.save-status {
+    color: #4B5563;
+    font-family: Jura;
+    font-size: 14px;
+    font-weight: 800;
+    padding: 12px;
+    border-right: 1px solid #D1D5D8;
+    flex-grow: 1;
+}
+
+.save-status {
+    border: none;
+}
+
+.color-palette {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    padding-left: 10px;
+}
+
+.color-dot {
+    background-color: transparent;
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.active-color-dot {
+    transform: scale(1.25);
+}
+
+.color1 { background-color: #ffffff;}
+.color2 {background-color: #FBBC04;}
+.color3 {background-color: #CCFF90;}
+.color4 {background-color: #AECBFA;}
+.color5 {background-color: #F28B82;}
+
+.tools-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    padding: 16px 8px;
+    gap: 12px;
+    box-shadow: 0 1px 2px #000000;
+}
+
+.tools-container-bg-white {
+    background-color: #FFFFFF;
+}
+
+.tools-container-bg-yellow {
+    background-color: #FBBC04;
+}
+
+.tools-container-bg-green {
+    background-color: #CCFF90;
+}
+
+.tools-container-bg-blue {
+    background-color: #AECBFA;
+}
+
+.tools-container-bg-red {
+    background-color: #F28B82;
+}
+
+.tool-button {
+    height: 30px;
+    width: 30px;
+    border: 1px solid #FFFFFF;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 2px #000000;
+}
+
+.tool-button-bg-white {
+    background-color: #FFFFFF;
+}
+
+.tool-button-bg-yellow {
+    background-color: #fff4cc;
+}
+
+.tool-button-bg-green {
+    background-color: #ecffd6;
+}
+
+.tool-button-bg-blue {
+    background-color: #e8f0fe;
+}
+
+.tool-button-bg-red {
+    background-color: #fde8e6;
+}
+
+.active-tool-button {
+    height: 30px;
+    width: 30px;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 2px #000000;
+    transform: scale(1.15);
+}
+
+.tool-button-icon {
+    font-size: 16px;
+    color: #6B7280;
+}
+
+@media screen and (min-width: 768px) {
+    .create-note-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .note-input-container {
+        max-width: 820px;
+        width: 100%;
+        order: 0;
+    } 
+
+    .note-title-input {
+        font-size: 32px;
+    }
+
+    .note-content-input {
+        font-size: 24px;
+    }
+
+    .note-footer {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .tools-container {
+        width: 60px;
+        flex-direction: column;
+    }
+
+    .tool-button {
+        height: 40px;
+        width: 40px;
+        margin-bottom: 12px;
+    }
+
+    .active-tool-button {
+        height: 40px;
+        width: 40px;
+        margin-bottom: 12px;
+    }
+}

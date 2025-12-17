@@ -1,0 +1,110 @@
+.app-info-page-container {
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+}
+
+.app-info-card-container {
+    background-color: #F5F5F5;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 3px #000000;
+}
+
+.app-info-title {
+    text-align: center;
+    color: #9ACD32;
+    font-size: 28px;
+    font-family: Montez;
+    font-weight: 800;
+    margin-bottom: 6px;
+}
+
+.app-info-description {
+    text-align: center;
+    color: #555555;
+    font-size: 16px;
+    font-family: Jura;
+    font-weight: 600;
+    margin-bottom: 16px;
+}
+
+.app-info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 6x;
+    margin-bottom: 10px;
+}
+
+.app-info-section-heading {
+  margin: 0;
+  color: #000000;
+  font-size: 18px;
+  font-family: Jura;
+  font-weight: 800;
+}
+
+.app-info-text {
+  margin: 0;
+  color: #444444;
+  font-size: 16px;
+  font-family: Jura;
+}
+
+.app-info-tech-list {
+    padding-left: 18px;
+    color: #444444;
+    font-size: 16px;
+    font-family: Jura;
+}
+
+.app-info-social-links-container {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.app-info-social-link {
+  text-decoration: none;
+  color: #9ACD32;
+  font-size: 16px;
+  font-family: Jura;
+  font-weight: 800;
+}
+
+@media screen and (min-width: 768px) {
+    .app-info-page-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .app-info-card-container {
+        width: 50%;
+        max-width: 480px;
+        padding: 30px;
+    }
+
+    .app-info-title {
+        font-size: 32px;
+    }
+
+    .app-info-description {
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .app-info-section-heading {
+        font-size: 20px;
+    }
+
+    .app-info-text {
+        font-size: 18px;
+    }
+
+    .app-info-social-link {
+        font-size: 18px;
+    }
+}

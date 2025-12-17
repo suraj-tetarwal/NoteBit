@@ -1,0 +1,90 @@
+.forgot-password-page-container {
+    background-color: #F5F5F5;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.forgot-password-form-container {
+    width: 100%;
+    background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 1px 3px #000000;
+}
+
+.forgot-password-form-container-heading {
+    text-align: center;
+    color: #000000;
+    font-size: 26px;
+    font-family: Jura;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.forgot-password-form-field-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.forgot-password-form-field-container-label {
+    color: #000000;
+    font-size: 20px;
+    font-family: Jura;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.forgot-password-form-field-container-input-box {
+    background-color: #f0efe5;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    outline: none;
+    padding: 12px;
+    color: #000000;
+    font-size: 16px;
+    font-family: Jura;
+    font-weight: 600;
+}
+
+.forgot-password-form-button {
+    background-color: #9ACD32;
+    color: #FFFFFF;
+    font-family: Jura;
+    font-size: 20px;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    padding: 12px;
+}
+
+@media screen and (min-width: 768px) {
+    .forgot-password-form-container {
+        width: 50%;
+        max-width: 480px;
+    }
+
+    .forgot-password-form-container-heading {
+        font-size: 32px;
+    }
+
+    .forgot-password-form-field-container-label {
+        font-size: 22px;
+    }
+
+    .forgot-password-form-field-container-input-box {
+        padding: 16px;
+        font-size: 18px;
+    }
+}

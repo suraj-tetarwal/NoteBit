@@ -1,0 +1,76 @@
+.pinned-notes-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.pinned-notes-search-container {
+    background-color: #FFFFFF;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 1px 3px #000000;
+}
+
+.search-icon {
+    color: rgb(87, 86, 86);
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.search-box {
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+    color: #000000;
+    font-family: Jura;
+    font-size: 18px;
+    font-weight: 800;
+    border: none;
+    outline: none;
+    margin: none;
+    padding: none;
+}
+
+.empty-pinned-list-view-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.empty-pinned-list-view-text {
+    text-align: center;
+    color: #868686;
+    font-size: 36px;
+    font-family: Jura;
+    font-weight: 800;
+}
+
+
+.pinned-notes-list-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    list-style-type: none;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+@media screen and (min-width: 768px) {
+    .pinned-notes-search-container {
+        width: 50%;
+    }
+}

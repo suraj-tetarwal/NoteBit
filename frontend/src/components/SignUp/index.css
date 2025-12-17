@@ -1,0 +1,139 @@
+.sign-up-page-container {
+    background-color: #ffffff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+}
+
+.sign-up-form-container {
+    background-color: #f0f0f0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.sign-up-form-heading {
+    color: #9ACD32;
+    font-family: Jura;
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.sign-up-field-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.sign-up-field-label {
+    color: #000000;
+    font-family: Jura;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    align-self: flex-start;
+}
+
+.sign-up-input-box {
+    width: 100%;
+    background-color: #f0efe5;
+    color: #000000;
+    font-family: Jura;
+    font-size: 14px;
+    border-radius: 10px;
+    padding: 16px 0 16px 8px;
+    margin-bottom: 0;
+    border: 1px solid gray;
+    outline: none;
+}
+
+.sign-up-error-message {
+    color: #ff0000;
+    font-family: Jura;
+    font-size: 14px;
+    font-weight: 500;
+    align-self: flex-start;
+    margin: 6px;
+}
+
+.sign-up-button {
+    background-color: #9ACD32;
+    width: 100%;
+    color: #fdf8f8;
+    font-family: Jura;
+    font-size: 18px;
+    font-weight: 800;
+    border: none;
+    border-radius: 6px;
+    padding: 12px;
+    margin-top: 16px;
+    cursor: pointer;
+}
+
+.already-have-account-text {
+    color: #000000;
+    font-family: Jura;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+.sign-in-link {
+    color: #9ACD32;
+    font-family: Jura;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+    .sign-up-form-container {
+        width: 50%;
+        padding: 30px;
+    }
+
+    .sign-up-form-heading {
+        font-size: 32px;
+    }
+
+    .sign-up-field-label,
+    .sign-up-input-box,
+    .sign-up-error-message,
+    .forgot-password-link,
+    .sign-up-text,
+    .sign-in-link {
+        font-size: 16px;
+    }
+}
+
+
+@media screen and (min-width: 992px) {
+    .sign-up-form-container {
+        width: 30%;
+        padding: 50px;
+    }
+
+    .sign-up-form-heading {
+        font-size: 36px;
+    }
+
+    .sign-up-field-label,
+    .sign-up-input-box,
+    .sign-up-error-message,
+    .forgot-password-link,
+    .sign-up-text,
+    .sign-in-link {
+        font-size: 18px;
+    }
+}
