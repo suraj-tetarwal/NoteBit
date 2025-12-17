@@ -1,0 +1,78 @@
+POST http://localhost:5000/sign-up
+Content-Type: application/json
+
+{
+    "username": "user111",
+    "email": "user111@gmail.com",
+    "password": "@user001"
+}
+
+###
+
+POST http://localhost:5000/sign-in
+Content-Type: application/json
+
+{
+    "email": "surajtetarwal59@gmail.com",
+    "password": "@Mee251219"
+}
+
+### 
+# Drop notes table data 
+GET http://localhost:5000/custom
+
+###
+
+POST http://localhost:5000/notes
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cmFqdGV0YXJ3YWw1OUBnbWFpbC5jb20iLCJpYXQiOjE3NjU1MzA5Mzl9.YlT419CbiHUHEFjY1xD80gzOqj2aAQRhxopVG8vc7qI
+
+{
+    "title": "Hello World",
+    "content": "Hello World!",
+    "isPinned": true
+}
+
+###
+
+GET http://localhost:5000/notes
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIwMDFAZ21haWwuY29tIiwiaWF0IjoxNzY1MDE4MDU1fQ.VmAZY38Q3KlbvnES3yNyCmV4t6TRHtILRcz62odcBrc
+
+###
+
+GET http://localhost:5000/notes/2/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIwMDFAZ21haWwuY29tIiwiaWF0IjoxNzY1MDE4MDU1fQ.VmAZY38Q3KlbvnES3yNyCmV4t6TRHtILRcz62odcBrc
+
+###
+
+PUT http://localhost:5000/notes/10/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cmFqdGV0YXJ3YWw1OUBnbWFpbC5jb20iLCJpYXQiOjE3NjU3MjM0MDd9.yw884xe2SDZnFgaiakl2hY6ldrMBYrzQFZaa4Jfybzw
+
+{
+    "isPinned": false
+}
+
+###
+
+DELETE http://localhost:5000/notes/1/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InVzZXIwMDFAZ21haWwuY29tIiwiaWF0IjoxNzY1MDE4MDU1fQ.VmAZY38Q3KlbvnES3yNyCmV4t6TRHtILRcz62odcBrc
+
+###
+
+GET http://localhost:5000/account/summary/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cmFqdGV0YXJ3YWw1OUBnbWFpbC5jb20iLCJpYXQiOjE3NjU1MzA5Mzl9.YlT419CbiHUHEFjY1xD80gzOqj2aAQRhxopVG8vc7qI
+
+###
+
+GET http://localhost:5000/notes/pinned  
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1cmFqdGV0YXJ3YWw1OUBnbWFpbC5jb20iLCJpYXQiOjE3NjU1MzA5Mzl9.YlT419CbiHUHEFjY1xD80gzOqj2aAQRhxopVG8vc7qI
+
+### forgot password
+
+POST http://localhost:5000/forgot-password
+Content-Type: application/json
+
+{
+    "email": "surajtetarwal59@gmail.com"
+}
