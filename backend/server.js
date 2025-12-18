@@ -3,7 +3,7 @@ const cors = require('cors')
 const path = require('path')
 const {open} = require('sqlite')
 const sqlite3 = require('sqlite3')
-const bcrypt = require('bcrypt')
+const bcrypt = require("bcryptjs");
 const jwt = require('jsonwebtoken')
 const crypto = require('crypto')
 
@@ -243,18 +243,6 @@ const authenticateToken = (request, response, next) => {
         })
     }
 }
-
-// Custom
-app.get("/custom", async (request, response) => {
-
-    const dropTableQuery = `
-        DROP TABLE password_resets;
-    `
-
-    const result = await db.run(dropTableQuery)
-
-    response.send(result)
-})
 
 // Create a new note for the logged-in user only
 app.post("/notes", authenticateToken, async (request, response) => {

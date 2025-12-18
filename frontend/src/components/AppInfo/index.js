@@ -23,7 +23,7 @@ const AppInfo = () => {
                 </div>
                 <div className="app-info-section">
                     <h2 className="app-info-section-heading">Creator</h2>
-                    <p className="app-info-text">Built by <b>Suraj Tetarwal</b></p>
+                    <p className="app-info-text">Built by<b>Suraj Tetarwal</b></p>
                 </div>
                 <div className="app-info-social-links-container">
                     <a
