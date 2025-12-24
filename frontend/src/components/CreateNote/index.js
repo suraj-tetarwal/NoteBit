@@ -67,103 +67,104 @@ class CreateNote extends Component {
     }
 
     handleSave = async () => {
-        const toastId = toast.loading("Saving...")
-        
-        const {match} = this.props
-        const {params} = match
-        const {id} = params
-        
-        this.setState({saveStatus: saveNoteStatusConstants.inProgress})
-        
+      const toastId = toast.loading("Saving...");
 
-        const jwtToken = Cookies.get("jwtToken")
-        const {title, isPinned, selectedBackgroundColor} = this.state
+      const { match } = this.props;
+      const { params } = match;
+      const { id } = params;
 
-        const content = this.contentElementRef.current.innerHTML
+      this.setState({ saveStatus: saveNoteStatusConstants.inProgress });
 
-        const newNoteData = {
-            title,
-            content,
-            isPinned,
-            backgroundColor: selectedBackgroundColor
-        }
+      const jwtToken = Cookies.get("jwtToken");
+      const { title, isPinned, selectedBackgroundColor } = this.state;
 
-        const url = id ? `http://localhost:5000/notes/${id}` : "http://localhost:5000/notes"
-        const options = {
-            method: id ? "PUT" : "POST",
-            headers: {
-                "Content-Type": "application/json",
-                Authorization: `Bearer ${jwtToken}`
-            },
-            body: JSON.stringify(newNoteData)
-        }
-        const response = await fetch(url, options)
-        const data = await response.json()
-        if (response.ok) {
-            const {message} = data
-            toast.update(toastId, {
-                render: message,
-                type: "success",
-                isLoading: false,
-                autoClose: 3000
-            })
-            this.setState({saveStatus: saveNoteStatusConstants.success})
-        } else {
-            const {error} = data
-            this.setState({saveStatus: saveNoteStatusConstants.failure})
-            toast.update(toastId, {
-                render: error,
-                type: "error",
-                isLoading: false,
-                autoClose: 3000
-            })
-        }
-    }
+      const content = this.contentElementRef.current.innerHTML;
+
+      const newNoteData = {
+        title,
+        content,
+        isPinned,
+        backgroundColor: selectedBackgroundColor,
+      };
+
+      const url = id
+        ? `https://notebit-6.onrender.com/notes/${id}`
+        : "https://notebit-6.onrender.com/notes";
+      const options = {
+        method: id ? "PUT" : "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${jwtToken}`,
+        },
+        body: JSON.stringify(newNoteData),
+      };
+      const response = await fetch(url, options);
+      const data = await response.json();
+      if (response.ok) {
+        const { message } = data;
+        toast.update(toastId, {
+          render: message,
+          type: "success",
+          isLoading: false,
+          autoClose: 3000,
+        });
+        this.setState({ saveStatus: saveNoteStatusConstants.success });
+      } else {
+        const { error } = data;
+        this.setState({ saveStatus: saveNoteStatusConstants.failure });
+        toast.update(toastId, {
+          render: error,
+          type: "error",
+          isLoading: false,
+          autoClose: 3000,
+        });
+      }
+    };
 
     renderSaveNoteStatus = () => {
-        const {saveStatus} = this.state
-        switch (saveStatus) {
-            case saveNoteStatusConstants.success:
-                return "Saved"
-            case saveNoteStatusConstants.failure:
-                return "Error Occured"
-            case saveNoteStatusConstants.inProgress:
-                return "Saving..."
-            default:
-                return "Not Saved"
-        }
-    }
+      const { saveStatus } = this.state;
+      switch (saveStatus) {
+        case saveNoteStatusConstants.success:
+          return "Saved";
+        case saveNoteStatusConstants.failure:
+          return "Error Occured";
+        case saveNoteStatusConstants.inProgress:
+          return "Saving...";
+        default:
+          return "Not Saved";
+      }
+    };
 
     fetchNoteData = async (id) => {
-        const jwtToken = Cookies.get("jwtToken")
+      const jwtToken = Cookies.get("jwtToken");
 
-        const url = `http://localhost:5000/notes/${id}`
-        const options = {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${jwtToken}`
-            }
-        }
+      const url = `https://notebit-6.onrender.com/notes/${id}`;
+      const options = {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${jwtToken}`,
+        },
+      };
 
-        const response = await fetch(url, options)
-        const data = await response.json()
+      const response = await fetch(url, options);
+      const data = await response.json();
 
-        if (response.ok) {
-            const {note} = data 
-            const {title, content, is_pinned, background_color} = note
-            this.contentElementRef.current.innerHTML = content
-            this.setState({
-                title,
-                isPinned: is_pinned,
-                selectedBackgroundColor: background_color,
-                saveStatus: saveNoteStatusConstants.success
-            })
-            this.updateCount()
-        } else {
-            const {error} = data
-            toast.error(error)
-        }
-    }
+      if (response.ok) {
+        const { note } = data;
+        const { title, content, is_pinned, background_color } = note;
+        this.contentElementRef.current.innerHTML = content;
+        this.setState({
+          title,
+          isPinned: is_pinned,
+          selectedBackgroundColor: background_color,
+          saveStatus: saveNoteStatusConstants.success,
+        });
+        this.updateCount();
+      } else {
+        const { error } = data;
+        toast.error(error);
+      }
+    };
 
     componentDidMount() {
         const {match} = this.props

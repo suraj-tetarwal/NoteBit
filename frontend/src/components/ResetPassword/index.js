@@ -36,7 +36,7 @@ class ResetPassword extends Component {
         const {params} = match
         const {token} = params
 
-        const url = `http://localhost:5000/reset-password/${token}`
+        const url = `https://notebit-6.onrender.com/reset-password/${token}`;
         const options = {
             method: "POST",
             headers: {

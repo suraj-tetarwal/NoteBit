@@ -17,7 +17,7 @@ class ForgotPassword extends Component {
 
         const {email} = this.state
         
-        const url = "http://localhost:5000/forgot-password"
+        const url = "https://notebit-6.onrender.com/forgot-password";
         const options = {
             method: "POST",
             headers: {

@@ -15,75 +15,75 @@ class Profile extends Component {
     }
 
     handleExport = async () => {
-        const jwtToken = Cookies.get("jwtToken")
+      const jwtToken = Cookies.get("jwtToken");
 
-        const url = "http://localhost:5000/notes"
-        const options = {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${jwtToken}`,
-            },
-        }
+      const url = "https://notebit-6.onrender.com/notes";
+      const options = {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${jwtToken}`,
+        },
+      };
 
-        const response = await fetch(url, options) 
-        const data = await response.json()
+      const response = await fetch(url, options);
+      const data = await response.json();
 
-        const {notesArray} = data
+      const { notesArray } = data;
 
-        let fileContent = ""
+      let fileContent = "";
 
-        notesArray.forEach((note, index) => {
-            fileContent += `Note ${index+1}\n`
-            fileContent += `Title: ${note.title}\n`
-            fileContent += `Created: ${note.created_at}\n`
-            fileContent += `${this.htmlToText(note.content)}`
-            fileContent += `\n\n------------------------------------------------\n\n`
-        })
+      notesArray.forEach((note, index) => {
+        fileContent += `Note ${index + 1}\n`;
+        fileContent += `Title: ${note.title}\n`;
+        fileContent += `Created: ${note.created_at}\n`;
+        fileContent += `${this.htmlToText(note.content)}`;
+        fileContent += `\n\n------------------------------------------------\n\n`;
+      });
 
-        console.log(fileContent)
+      console.log(fileContent);
 
-        const blob = new Blob([fileContent], {type: "text/plain"})
-        const downlaodUrl = URL.createObjectURL(blob)
+      const blob = new Blob([fileContent], { type: "text/plain" });
+      const downlaodUrl = URL.createObjectURL(blob);
 
-        const linkElement = document.createElement("a")
-        linkElement.href = downlaodUrl
-        linkElement.download = "myNotes.txt"
-        linkElement.click()
+      const linkElement = document.createElement("a");
+      linkElement.href = downlaodUrl;
+      linkElement.download = "myNotes.txt";
+      linkElement.click();
 
-        URL.revokeObjectURL(downlaodUrl)
-    }
+      URL.revokeObjectURL(downlaodUrl);
+    };
 
     fetchUserAccountDetails = async () => {
-        const jwtToken = Cookies.get("jwtToken")
+      const jwtToken = Cookies.get("jwtToken");
 
-        const url = "http://localhost:5000/account/summary/"
-        const options = {
-            method: "GET",
-            headers: {
-                Authorization: `Bearer ${jwtToken}`
-            }
-        }
+      const url = "https://notebit-6.onrender.com/summary/";
+      const options = {
+        method: "GET",
+        headers: {
+          Authorization: `Bearer ${jwtToken}`,
+        },
+      };
 
-        const response = await fetch(url, options)
-        const data = await response.json()
+      const response = await fetch(url, options);
+      const data = await response.json();
 
-        if (response.ok) {
-            const {userDetails} = data
-            const formattedUserDetails = {
-                username: userDetails.username,
-                email: userDetails.email,
-                createdAt: userDetails.created_at,
-                totalNotes: userDetails.total_notes,
-                pinnedNotes: userDetails.pinned_notes
-            }
-            this.setState({
-                userDetails: formattedUserDetails
-            })
-        } else {
-            const {error} = data
-            alert(error)
-        }
-    }
+      if (response.ok) {
+        const { userDetails } = data;
+        const formattedUserDetails = {
+          username: userDetails.username,
+          email: userDetails.email,
+          createdAt: userDetails.created_at,
+          totalNotes: userDetails.total_notes,
+          pinnedNotes: userDetails.pinned_notes,
+        };
+        this.setState({
+          userDetails: formattedUserDetails,
+        });
+      } else {
+        const { error } = data;
+        alert(error);
+      }
+    };
 
     componentDidMount() {
         this.fetchUserAccountDetails()
