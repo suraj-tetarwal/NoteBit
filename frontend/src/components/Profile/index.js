@@ -56,7 +56,7 @@ class Profile extends Component {
     fetchUserAccountDetails = async () => {
       const jwtToken = Cookies.get("jwtToken");
 
-      const url = "https://notebit-6.onrender.com/summary/";
+      const url = "https://notebit-6.onrender.com/account/summary";
       const options = {
         method: "GET",
         headers: {
